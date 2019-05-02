@@ -25,15 +25,15 @@ public class OpenRiotApiClient {
     @Autowired
     private RestTemplate restTemplate;
 
-    private String requestUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/KooZen2?api_key=RGAPI-7934ba8a-44a3-42c8-aa1c-9fd0ab16c270";
+    private String requestUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/{name}?api_key=RGAPI-7934ba8a-44a3-42c8-aa1c-9fd0ab16c270";
 
-    public CurrentPlayer getCurrentPlayer() {
+    public CurrentPlayer getCurrentPlayer(String playerName) {
 
-        return restTemplate.exchange(requestUrl, HttpMethod.GET,null, CurrentPlayer.class,null,null).getBody();
+        return restTemplate.exchange(requestUrl, HttpMethod.GET,null, CurrentPlayer.class,playerName,null).getBody();
     }
 
 }
-
+//https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/Hide%20on%20bush?api_key=RGAPI-8b6da1f4-8ae3-4b93-b658-0f4cc0c76a31
 /*
 {"coord":{"lon":-0.13,"lat":51.51},
 "weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],

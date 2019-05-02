@@ -42,7 +42,7 @@ public class PlayerService {
         String target = queue.pop();
         queue.add(target);
 
-        CurrentPlayer currentPlayer = openRiotApiClient.getCurrentPlayer();
+        CurrentPlayer currentPlayer = openRiotApiClient.getCurrentPlayer(target);
         currentPlayerRepository.insertPlayer(currentPlayer);
     }
 

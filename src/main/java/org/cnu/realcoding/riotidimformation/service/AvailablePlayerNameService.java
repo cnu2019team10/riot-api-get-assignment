@@ -8,15 +8,13 @@ import java.util.stream.Collectors;
 
 @Service
 public class AvailablePlayerNameService {
-    private String[] cityNames = {
+    private String[] playerNames = {
 
-            "KooZen2",
-            "hide on bush",
-            "인생은시궁창"
+            "KooZen2"
 
     };
     public List<String> getAvailablePlayerNames() {
-        List<String> collect = Arrays.stream(cityNames).collect(Collectors.toList());
+        List<String> collect = Arrays.stream(playerNames).collect(Collectors.toList());
         return collect;
     }
 }

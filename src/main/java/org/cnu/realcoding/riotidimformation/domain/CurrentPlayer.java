@@ -8,6 +8,7 @@ public class CurrentPlayer {
     private int profileIconId;
     private long revisionDate;
     private long summonerLevel;
+    private String tier;
 
     /*
     private Main main;
